@@ -4,7 +4,9 @@ import requests
 import colorama
 import urllib2
 import gi
+import sys
 from bs4 import BeautifulSoup
+from CratorLibrary import Comp
 from colorama import Fore, Back, Style
 #Starter command line
 def CommandLine(UsernameCheck):
@@ -23,7 +25,10 @@ def CommandLine(UsernameCheck):
 		    		Command3 = Command2.strip("(")
 		    		Command4 = Command3.strip(")")
 		    		Command5 = Command4.strip(" ")
-		    		os.chdir(Command5)
+		    		try:
+		    			os.chdir(Command5)
+		    		except OSError:
+		    			print "[Errno 2] No such file or directory"
 		    	elif InputGiven == "GoOut":
 		    		os.chdir('..')
 			elif 'exit' in InputGiven:
@@ -85,8 +90,9 @@ def CommandLine(UsernameCheck):
 		 	elif InputGiven == "Open Blog":
 				Comp.Website()				
 		    	else:
-					os.system(InputGiven)
-  		#Login code
+		 			os.system(InputGiven)
+		    		
+		#Login code
 def loginUser():
 	print Fore.RED + "		Welcome to CratorOS!"
 	print "-----------------------------------------------"

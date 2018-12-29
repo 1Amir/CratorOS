@@ -1,6 +1,5 @@
 import os
 import requests
-import CratorOS
 from scrapy import simple_get
 from bs4 import BeautifulSoup
 def Website():
