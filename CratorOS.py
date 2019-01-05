@@ -35,7 +35,6 @@ def CommandLine(UsernameCheck):
 				running = False
 			elif "help Crater" in InputGiven:
 		 		print "Comp.say(string)-put text on the screen"
-				print "Comp.download(url)-download a file from a specifed url. eg. Comp.download('http://website.com/files/file.zip')"
 				print "GoTo(path)-Go into specifed directory."
 				print "GoOut-Goes a directory back from the old directory"
 		 	elif InputGiven == "help":
@@ -84,11 +83,6 @@ def CommandLine(UsernameCheck):
 						 getopts optstring name [arg]                                                            wait [-n] [id ...]
 						 hash [-lr] [-p pathname] [-dt] [name ...]                                               while COMMANDS; do COMMANDS; done
 						 help [-dms] [pattern ...]                                                               { COMMANDS ; }"""
-
-			elif "Comp.download(" in InputGiven:#proper!!
-		 		print "Feature being added in the future."
-		 	elif InputGiven == "Open Blog":
-				Comp.Website()				
 		    	else:
 		 			os.system(InputGiven)
 		    		
